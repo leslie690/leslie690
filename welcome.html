@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>welcome</title>
+    <style>
+        body {
+            background-image: url(./pic/img2.jpg);
+            background-size: cover;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .header {
+            padding: 5px;
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        .header #logo {
+            width: 50px;
+        }
+        
+        .header .navbar ul li a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-left: 2rem;
+            position: relative;
+            text-decoration: none;
+        }
+        
+        .header .navbar .dropdown .dropdown-content {
+            background: #fff;
+        }
+        
+        .header .navbar .dropdown .dropdown-content a {
+            color: black;
+        }
+        
+        .header ul {
+            display: flex;
+        }
+        
+        .navbar ul li a:after {
+            content: '';
+            background: grey;
+            width: 0;
+            height: 3px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 5px;
+            transition: 3s;
+        }
+        
+        .navbar ul li a:hover:after {
+            content: '';
+            background: silver;
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 5px;
+        }
+        
+        .nav ul li {
+            background: wheat;
+            border: 2px solid red;
+        }
+        
+        .icons div {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: #fff;
+            display: none;
+        }
+        
+        .icons a {
+            color: #fff;
+            background: silver;
+            padding: 10px 10px;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        
+        .icons a:hover {
+            background: transparent;
+            border: 1px solid black;
+        }
+        
+        .navbar-active {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        /* Dropdown Styles */
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            /* background: white; */
+        }
+        
+        .dropdown-content a {
+            color: black;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="come.html"><img src="pic/logo.png" id="logo" alt=""></a>
+        <nav class="navbar">
+            <ul>
+                <li class="dropdown">
+                    <a href="#">Patient</a>
+                    <div class="dropdown-content">
+                        <a href="register.php">Register</a>
+                        <a href="login.php">Login</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Doctor</a>
+                    <div class="dropdown-content">
+                        <a href="dregister.php">Register</a>
+                        <a href="dlogin.php">Login</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+
+        <div class="icons">
+        </div>
+
+    </header>
+
+
+
+</body>
+
+</html>

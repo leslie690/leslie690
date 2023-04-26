@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            transition: 2s;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+        
+        html {
+            font-size: 62.5%;
+            overflow: hidden;
+        }
+        
+        .header {
+            padding: 1.5rem 7%;
+            background-color: #070707;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        .header #logo {
+            width: 50px;
+        }
+        
+        .header .navbar a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-left: 2rem;
+            position: relative;
+        }
+        
+        .header ul {
+            display: flex;
+        }
+        
+        .navbar a:after {
+            content: '';
+            background: #b9b7b9;
+            width: 0;
+            height: 3px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 5px;
+            transition: 3s;
+        }
+        
+        .navbar a:hover:after {
+            content: '';
+            background: #b9b7b9;
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 5px;
+        }
+        
+        .icons div {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: #fff;
+            display: none;
+        }
+        
+        .icons a {
+            color: #fff;
+            background: #b9b7b9;
+            padding: 1.5rem 3rem;
+            font-size: 1.5rem;
+            border-radius: 10px;
+        }
+        
+        .icons a:hover {
+            background: transparent;
+            border: 1px solid #b9b7b9;
+        }
+        
+        .navbar-active {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        
+        body {
+            background-color: lightslategray;
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding-top: 6%;
+            position: relative;
+        }
+        
+        .background-content {
+            position: absolute;
+            top: 50%;
+            width: 50%;
+            transform: translate(-80);
+        }
+        
+        .background-content h1 {
+            color: black;
+            font-size: 40px;
+            text-align: center;
+        }
+        
+        .background-content p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .background-content a {
+            background: #b9b7b9;
+            padding: 1.5rem 3rem;
+            border-radius: 15px;
+            color: #fff;
+            font-size: 1.5rem;
+            transition: 5s;
+        }
+        
+        .background-content a:hover {
+            background: transparent;
+            border: 1px solid #b9b7b9;
+            color: black;
+        }
+        
+        .about {
+            padding: 3rem 7%;
+        }
+        
+        .main.about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .inner-about {
+            flex: 1 1 45rem;
+        }
+        
+        .inner-about.inner.about-image img {
+            width: 100%;
+        }
+        
+        .about-content {
+            width: 80%;
+        }
+        
+        .about-content h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .about-content p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .about.content a {
+            background: #b9b7b9;
+            padding: 1rem 3rem;
+            font-size: 1.5rem;
+            color: #fff;
+            transition: 5s;
+        }
+        
+        .about-content a:hover {
+            background: transparent;
+            border: 1px solid #b9b7b9
+        }
+        
+        .services {
+            padding: 5rem 7%;
+        }
+        
+        .services-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        
+        .left-service-content {
+            flex: 1 1 45rem;
+        }
+        
+        .right-service-content {
+            flex: 1 1 45rem;
+        }
+        
+        .left-service-content h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .left-service-content p {
+            font-size: 1.5rem;
+        }
+        
+        .right-service-content .right-btn a {
+            padding: 1.5rem 3rem;
+            font-size: 2rem;
+            color: #fff;
+            background: #b9b7b9;
+        }
+        
+        .right-service-content .right-btn a:hover {
+            border: 1px solid #b9b7b9;
+            background: transparent;
+            color: black;
+        }
+        
+        @media(max-width:767px) {
+            html {
+                font-size: 55%;
+            }
+            .header {
+                padding: 2rem;
+            }
+            .icons div {
+                display: initial;
+            }
+            .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: #b9b7b9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            }
+            .navbar a {
+                display: block;
+                font-size: 2rem;
+                font-weight: bold;
+                margin: 1rem;
+                padding: 1rem;
+                color: blue;
+            }
+            .background-content {
+                width: 100%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding-left: 5rem;
+            }
+            .inner-about.inner.about-image img {
+                margin-top: 20px;
+            }
+            .doc-icons {
+                position: absolute;
+                bottom: 0;
+            }
+            .doc-icons div {
+                font-size: 2rem;
+                color: #070707;
+                background: #fff;
+                border: 1px solid black;
+                margin: left 2rem;
+                width: 5rem;
+                height: 5rem;
+                line-height: 5rem;
+                text-align: center;
+            }
+        }
+        
+        .about {
+            margin-top: 5%;
+            border: 1px solid black;
+        }
+        
+        .about h1 {
+            color: white;
+        }
+        
+        .about p ul {
+            font-size: 20px;
+            color: white;
+        }
+        
+        li {
+            font-size: 30px;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+        <a href="come.html"><img src="pic/logo.png" id="logo" alt=""></a>
+
+        <nav class="navbar">
+            <a href="./come.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="appoint.php">Appointment</a>
+            <a href="doctor.php">Doctors</a>
+
+
+
+        </nav>
+
+        <div class="icons">
+            <div id="menubar" class="fas fa-bars"></div>
+            <a href="./contact.html">Contact</a>
+        </div>
+    </header>
+    <div>
+
+        <h1>HomeCare System</h1>
+    </div>
+
+    <div class="content">
+
+        <div class="about">
+            <h1 style="font-size: 30px; color: black;">
+                <center>ABOUT US</center>
+            </h1>
+
+            <p>
+                <ul>
+
+                    <li>We are committed to providing exceptional care to our patients. With over 3 years of experience, <br> we have grown to become one of the largest and most respected home health care systems in the country.Our mission is to improve thehealth
+                        and well-being of the communities we serve by delivering high-quality, compassionate care.</li> <br><br>
+                    <li>We offer a comprehensive range of services, from primary care and specialty services to emergency care and advanced treatments.</li><br>
+                    <li>We are equiped with a team of highly skilled doctors who provide personalized care to our patients.</li> <br>
+                    <li>In addittion to our services, we are committed to advancing the field of medicine through research and education.</li> <br>
+                    <li>We are proud to be a trusted partner in the health and well-being of our patients and community at large.</li>
+
+                </ul>
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
