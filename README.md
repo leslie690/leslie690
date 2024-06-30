@@ -1,8 +1,8 @@
-- 👋 Hi, I’m @leslie690
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+- 👋 Hi, I’m Leslie Isaac
+- 👀 A web developer with cybersecurity expertise
+- 🌱 I’m currently a student 
+- 💞️ I’m looking to collaborate and learn from different tech individuals
+- 📫 You can  reach me out through my socials linked on this profile
 
 <!---
 leslie690/leslie690 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
